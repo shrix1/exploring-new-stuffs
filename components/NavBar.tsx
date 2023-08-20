@@ -2,9 +2,20 @@
 import ThemeSelector from "@/components/ThemeSelector"
 import useScroll from "@/lib/hooks/useScroll"
 import React from "react"
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { ArrowTopRightIcon } from "@radix-ui/react-icons"
+import Link from "next/link"
 
 const NavBar = () => {
   const scrolled = useScroll(50)
+
+  const routes = [{ name: "hoverCard", path: "/hovercard" }]
 
   return (
     <nav
@@ -16,7 +27,23 @@ const NavBar = () => {
       } `}
     >
       <h1 className="text-xl font-medium">Shri</h1>
-      <ThemeSelector />
+      <section className="flex justify-center items-center gap-3">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline">
+              Routes <ArrowTopRightIcon className="w-4 h-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {routes.map((r) => (
+              <DropdownMenuItem key={r.name}>
+                <Link href={r.path}> {r.name}</Link>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+        <ThemeSelector />
+      </section>
     </nav>
   )
 }
