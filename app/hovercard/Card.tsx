@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = ({ className, grad, children }) => {
   return (
     <section
       className={cn(
-        "w-1/4 relative h-64 rounded-xl border dark:bg-black border-gray-300 group shadow-2xl",
+        "w-[350px] relative h-64 rounded-xl border dark:bg-black border-gray-300 group shadow-2xl",
         className
       )}
       onMouseMove={handleMouseMove}
@@ -45,7 +45,7 @@ const Card: React.FC<CardProps> = ({ className, grad, children }) => {
             ${grad}, transparent 80%`,
         }}
       />
-      <section className="flex relative z-4 px-8 py-10 flex-col justify-between h-full">
+      <section className="flex relative z-5 px-8 py-10 flex-col justify-between h-full">
         {children}
       </section>
     </section>

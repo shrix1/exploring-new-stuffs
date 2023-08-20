@@ -27,7 +27,10 @@ const NavBar = () => {
       } `}
     >
       <h1 className="text-xl font-medium">
-        <Link href="/">Shri</Link>
+        <Link href="/">
+          Code by{" "}
+          <span className="text-blue-500 font-semibold underline">Shri</span>
+        </Link>
       </h1>
       <section className="flex justify-center items-center gap-3">
         <DropdownMenu>
