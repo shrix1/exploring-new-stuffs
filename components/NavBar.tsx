@@ -19,7 +19,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`w-full flex items-center justify-around p-4 sticky top-0 border-b
+      className={`w-full flex items-center z-10 justify-around p-4 sticky top-0 border-b
       ${
         scrolled
           ? "dark:bg-black/70 translate-y-[-100px] transition-transform duration-700 bg-white/70"
